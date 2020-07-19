@@ -5,8 +5,10 @@ const bodyParser = require('body-parser');
 const myErrorLogger = require('./utilities/errorLogger');
 const myRequestLogger = require('./utilities/requestLogger');
 const router = require('../src/routes/routing');
+const cors = require('cors');
 
 app.use(bodyParser.json());
+app.use(cors());
 app.use(myRequestLogger);
 app.use('/', router);
 app.use(myErrorLogger);
